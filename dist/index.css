@@ -1,0 +1,80 @@
+:root {
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient(hsl(192, 100%, 67%) to hsl(280, 87%, 65%));
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 100%;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.9375rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.container {
+  background-image: url(/images/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.toDo__input__container {
+  background-color: whitesmoke;
+}
+
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content__container {
+  max-width: 33.75rem;
+  width: 100%;
+  border: 2px solid black;
+  margin-top: 4.375rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  min-height: 3.125rem;
+  width: 100%;
+  align-items: center;
+}
+.header button {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.toDo__input__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem;
+}

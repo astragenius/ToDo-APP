@@ -1,0 +1,48 @@
+@use 'functions';
+
+
+.container {
+
+    max-width: rem(1440);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.content__container{
+
+    max-width: rem(540);
+    width: 100%;
+    border: 2px solid black;
+    margin-top: rem(70);
+}
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    min-height: rem(50);
+    width: 100%;
+    align-items: center;
+    
+    button {
+
+        width: rem(25);
+        height: rem(25);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        
+    }
+}
+
+
+.toDo__input__container {
+
+
+    display: flex;
+    justify-content: space-between;
+    padding: rem(20);
+}
+
