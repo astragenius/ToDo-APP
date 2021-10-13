@@ -1,0 +1,97 @@
+.toDolist__container {
+
+    margin-top: rem(24);
+    background-color: #fff;
+    border-radius: rem(8);
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+
+}
+
+
+
+.toDolist__content {
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: rem(20) rem(16);
+    border-bottom: 1px solid var(--very-light-grayish-blue);
+    /* border: 1px solid black; */
+    li {
+
+        list-style: none;
+        font-size: rem(18);
+        color: var(--very-dark-grayish-blue);
+        margin-left: rem(24);
+        letter-spacing: -0.25px;
+
+
+        del {
+
+            color: var(--light-grayish-blue);
+        }
+       
+    }
+}
+
+.toDolist__footer {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(20);
+    letter-spacing: -0.19px;
+
+
+    span {
+
+        font-size: rem(14);
+        color: var(--dark-grayish-blue);
+
+    }
+
+    button {
+
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: rem(14);
+        color: var(--dark-grayish-blue);
+
+    }
+    
+}
+
+.filter_btn {
+
+    margin-right: rem(14);
+    font-weight: bold;
+
+    &:hover {
+
+        color: var(--very-dark-grayish-blue);
+    }
+
+    &:focus {
+
+        color: var(--bright-blue);
+    }
+}
+
+.delete__btn {
+
+   button {
+
+    font-weight: 400;
+
+    &:hover {
+
+        color: var(--very-dark-grayish-blue)
+   }
+   }
+
+  
+}
+
+
+

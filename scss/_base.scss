@@ -1,9 +1,15 @@
+body{
+
+    background-color: var(--bg);
+}
+
 h1 {
 
     font-size: rem(40);
     letter-spacing: rem(15);
     text-transform: uppercase;
     font-weight: 700;
+    color: #fff;
 }
 
 .container {
@@ -17,7 +23,28 @@ h1 {
 
 .toDo__input__container {
 
-    background-color: whitesmoke;
+   background-color: #fff;
+   border-radius: rem(5);
+   
 
     
 }
+
+.input__text__container {
+
+    
+
+    input[type="text"] {
+
+       
+        border: none;
+    }
+
+    ::placeholder {
+
+        font-size: rem(18);
+        color: var(--very-dark-grayish-blue);
+        letter-spacing: -0.25px;
+    }
+}
+
