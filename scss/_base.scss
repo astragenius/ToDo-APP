@@ -12,13 +12,37 @@ h1 {
     color: #fff;
 }
 
-.container {
+
+
+
+.container--light {
 
     background-image: url(/images/bg-desktop-light.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     
+}
 
+.container--dark {
+
+    
+    background-image: url(/images/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.btn--dark {
+
+    background-image: url(/images/icon-sun.svg);
+    background-size: contain;
+    background-color: transparent;
+
+}
+.btn--light {
+
+    background-image: url(/images/icon-moon.svg);
+    background-size: contain;
+    background-color: transparent;
 }
 
 .toDo__input__container {
@@ -36,10 +60,13 @@ h1 {
 
     input[type="text"] {
 
-       
         border: none;
+
+       
     }
 
+    
+    
     ::placeholder {
 
         font-size: rem(18);

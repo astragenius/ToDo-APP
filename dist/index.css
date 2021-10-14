@@ -4,12 +4,23 @@
 }
 
 :root,
+:root.dark {
+  --bg: #161722;
+  --very-light-grayish-blue: #25273c;
+  --light-grayish-blue: #cacde8;
+  --dark-grayish-blue: #777a92;
+  --very-dark-grayish-blue: #4d5066;
+  --bg-toDolist: #393a4c;
+}
+
+:root,
 :root.light {
   --bg: #fafafa;
   --very-light-grayish-blue: #e4e5f1;
   --light-grayish-blue: #d2d3db;
   --dark-grayish-blue: #9394a5;
   --very-dark-grayish-blue: #484b6a;
+  --bg-toDolist: #fff;
 }
 
 *,
@@ -47,10 +58,28 @@ h1 {
   color: #fff;
 }
 
-.container {
+.container--light {
   background-image: url(/images/bg-desktop-light.jpg);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.container--dark {
+  background-image: url(/images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.btn--dark {
+  background-image: url(/images/icon-sun.svg);
+  background-size: contain;
+  background-color: transparent;
+}
+
+.btn--light {
+  background-image: url(/images/icon-moon.svg);
+  background-size: contain;
+  background-color: transparent;
 }
 
 .toDo__input__container {
@@ -90,11 +119,10 @@ h1 {
   align-items: center;
   margin-bottom: 2.5rem;
 }
-.header button {
+.header input {
   width: 1.5625rem;
   height: 1.5625rem;
   border: none;
-  background: transparent;
   cursor: pointer;
 }
 
@@ -181,7 +209,7 @@ h1 {
 
 .toDolist__container {
   margin-top: 1.5rem;
-  background-color: #fff;
+  background-color: var(--very-light-grayish-blue);
   border-radius: 0.5rem;
   box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 }
@@ -189,20 +217,30 @@ h1 {
 .toDolist__content {
   display: flex;
   align-items: center;
-  justify-content: start;
   padding: 1.25rem 1rem;
   border-bottom: 1px solid var(--very-light-grayish-blue);
   /* border: 1px solid black; */
 }
 .toDolist__content li {
   list-style: none;
+  flex-grow: 1;
   font-size: 1.125rem;
   color: var(--very-dark-grayish-blue);
   margin-left: 1.5rem;
   letter-spacing: -0.25px;
+  cursor: pointer;
 }
-.toDolist__content li del {
+.toDolist__content .del__line {
+  text-decoration: line-through;
   color: var(--light-grayish-blue);
+}
+
+.toDolist__content:hover .delete__cross {
+  display: block;
+}
+
+.delete__cross {
+  display: none;
 }
 
 .toDolist__footer {
