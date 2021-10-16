@@ -1,4 +1,5 @@
 import { switchTheme } from "./theme-toggle";
+import {dragDrop} from "./drag-and-drop";
 
 
 
@@ -8,10 +9,14 @@ import { switchTheme } from "./theme-toggle";
 
     const btn = document.getElementById('toggle');
     btn.addEventListener('click', switchTheme);
+    dragDrop;
+
 })();
 
 
-let dragSrcEl = null;
+
+
+/* let dragSrcEl = null;
 
 function handleDragStart(e) {
    
@@ -72,7 +77,7 @@ list.forEach(item => {
     item.addEventListener('dragleave', handleDragLeave);
     item.addEventListener('dragend', handleDragEnd);
     item.addEventListener('drop', handleDrop);
-})
+}) */
 
 
 
