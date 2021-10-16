@@ -10,7 +10,13 @@
   --light-grayish-blue: #cacde8;
   --dark-grayish-blue: #777a92;
   --very-dark-grayish-blue: #4d5066;
-  --bg-toDolist: #393a4c;
+  --bg-toDolist: #25273c;
+  --toDolist-border: #4d5066;
+  --box-shadow: #00000080;
+  --bg-input: #25273c;
+  --input-text: #c8cbe8;
+  --toDolist-text: #c8cbe8;
+  --hover: #e4e5f1;
 }
 
 :root,
@@ -21,6 +27,12 @@
   --dark-grayish-blue: #9394a5;
   --very-dark-grayish-blue: #484b6a;
   --bg-toDolist: #fff;
+  --toDolist-border: #e4e5f1;
+  --box-shadow: #c2c3d680;
+  --bg-input: #ffff;
+  --input-text: #393A4B;
+  --toDolist-text: #494C6B;
+  --hover: #494c6b;
 }
 
 *,
@@ -29,6 +41,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 html,
@@ -58,6 +71,10 @@ h1 {
   color: #fff;
 }
 
+button {
+  font-family: Josefin Sans, sans-serif;
+}
+
 .container--light {
   background-image: url(/images/bg-desktop-light.jpg);
   background-repeat: no-repeat;
@@ -83,17 +100,33 @@ h1 {
 }
 
 .toDo__input__container {
-  background-color: #fff;
+  background-color: var(--bg-input);
   border-radius: 0.3125rem;
 }
 
 .input__text__container input[type=text] {
+  outline: transparent;
   border: none;
+  background-color: var(--bg-input);
+  color: var(--input-text);
+  font-size: 1.125rem;
 }
 .input__text__container ::placeholder {
   font-size: 1.125rem;
   color: var(--very-dark-grayish-blue);
   letter-spacing: -0.25px;
+}
+.input__text__container :focus {
+  color: var(--input-text);
+  font-size: 1.125rem;
+}
+
+.drag {
+  color: var(--dark-grayish-blue);
+  width: 100%;
+  text-align: center;
+  margin-top: 3.0625rem;
+  font-size: 0.875rem;
 }
 
 .container {
@@ -174,7 +207,7 @@ h1 {
   left: 0;
   height: 25px;
   width: 25px;
-  border: 1px solid var(--light-grayish-blue);
+  border: 1px solid var(--toDolist-border);
   border-radius: 50%;
   border-radius: 15px;
 }
@@ -209,30 +242,30 @@ h1 {
 
 .toDolist__container {
   margin-top: 1.5rem;
-  background-color: var(--very-light-grayish-blue);
-  border-radius: 0.5rem;
-  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  background-color: var(--bg-toDolist);
+  border-radius: 0.3125rem;
+  box-shadow: 0px 35px 50px -15px var(--box-shadow);
 }
 
 .toDolist__content {
   display: flex;
   align-items: center;
   padding: 1.25rem 1rem;
-  border-bottom: 1px solid var(--very-light-grayish-blue);
+  border-bottom: 1px solid var(--toDolist-border);
   /* border: 1px solid black; */
 }
 .toDolist__content li {
   list-style: none;
   flex-grow: 1;
   font-size: 1.125rem;
-  color: var(--very-dark-grayish-blue);
+  color: var(--toDolist-text);
   margin-left: 1.5rem;
   letter-spacing: -0.25px;
   cursor: pointer;
 }
 .toDolist__content .del__line {
   text-decoration: line-through;
-  color: var(--light-grayish-blue);
+  opacity: 0.3;
 }
 
 .toDolist__content:hover .delete__cross {
@@ -259,6 +292,7 @@ h1 {
   border: none;
   cursor: pointer;
   font-size: 0.875rem;
+  font-weight: 700;
   color: var(--dark-grayish-blue);
 }
 
@@ -267,7 +301,7 @@ h1 {
   font-weight: bold;
 }
 .filter_btn:hover {
-  color: var(--very-dark-grayish-blue);
+  color: var(--hover);
 }
 .filter_btn:focus {
   color: var(--bright-blue);
@@ -277,5 +311,5 @@ h1 {
   font-weight: 400;
 }
 .delete__btn button:hover {
-  color: var(--very-dark-grayish-blue);
+  color: var(--hover);
 }

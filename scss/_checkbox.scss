@@ -28,7 +28,7 @@
     left: 0;
     height: 25px;
     width: 25px;
-    border: 1px solid var(--light-grayish-blue);
+    border: 1px solid var(--toDolist-border);
     border-radius: 50%;
     
   border-radius: 15px;
@@ -60,6 +60,8 @@
   .container_label input:checked ~ .checkmark:after {
     display: block;
   }
+
+ 
   
   /* Style the checkmark/indicator */
   .container_label .checkmark:after {
