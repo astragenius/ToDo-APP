@@ -1,3 +1,5 @@
+@use 'breakpoints';
+
 body{
 
     background-color: var(--bg);
@@ -10,6 +12,11 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     color: #fff;
+
+    @include xs {
+
+        font-size: rem(25);
+    }
 }
 
 button {
@@ -26,6 +33,11 @@ button {
     background-image: url(/images/bg-desktop-light.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+
+    @include xs {
+
+        background-image: url(/images/bg-mobile-light.jpg);
+    }
     
 }
 
@@ -35,6 +47,11 @@ button {
     background-image: url(/images/bg-desktop-dark.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+
+    @include xs {
+
+        background-image: url(/images/bg-mobile-dark.jpg);
+    }
 }
 
 .btn--dark {
@@ -71,6 +88,8 @@ button {
         background-color: var(--bg-input);
         color: var(--input-text);
         font-size: rem(18);
+
+
     
     }
 
@@ -81,6 +100,9 @@ button {
         font-size: rem(18);
         color: var(--very-dark-grayish-blue);
         letter-spacing: -0.25px;
+        @include xs {
+            font-size: rem(12);
+        }
     }
 
     :focus {

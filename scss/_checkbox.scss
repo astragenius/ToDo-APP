@@ -31,16 +31,14 @@
     border: 1px solid var(--toDolist-border);
     border-radius: 50%;
     
-  border-radius: 15px;
+    border-radius: 15px;
+
+    @include xs {
+      height: rem(20);
+      width: rem(20);
+    }
   }
-  
-  /* On mouse-over, add a grey background color */
-  .container_label:hover input ~ .checkmark {
-    /* background-color: #ccc; */
-   
-    
-    
-  }
+ 
   
   /* When the checkbox is checked, add a blue background */
   .container_label input:checked ~ .checkmark {
@@ -68,5 +66,11 @@
    
     content: url(/images/icon-check.svg);
     left: rem(7);
+
+    @include xs {
+
+      left: rem(4);
+      bottom: rem(-2);
+    }
    
   }

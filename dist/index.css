@@ -70,6 +70,11 @@ h1 {
   font-weight: 700;
   color: #fff;
 }
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.5625rem;
+  }
+}
 
 button {
   font-family: Josefin Sans, sans-serif;
@@ -80,11 +85,21 @@ button {
   background-repeat: no-repeat;
   background-size: contain;
 }
+@media (max-width: 375px) {
+  .container--light {
+    background-image: url(/images/bg-mobile-light.jpg);
+  }
+}
 
 .container--dark {
   background-image: url(/images/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
   background-size: contain;
+}
+@media (max-width: 375px) {
+  .container--dark {
+    background-image: url(/images/bg-mobile-dark.jpg);
+  }
 }
 
 .btn--dark {
@@ -116,6 +131,11 @@ button {
   color: var(--very-dark-grayish-blue);
   letter-spacing: -0.25px;
 }
+@media (max-width: 375px) {
+  .input__text__container ::placeholder {
+    font-size: 0.75rem;
+  }
+}
 .input__text__container :focus {
   color: var(--input-text);
   font-size: 1.125rem;
@@ -136,12 +156,23 @@ button {
   justify-content: center;
   height: 100vh;
 }
+@media (max-width: 375px) {
+  .container {
+    max-width: 23.4375rem;
+  }
+}
 
 .content__container {
   max-width: 33.75rem;
   width: 100%;
   /* border: 2px solid black; */
   margin-top: 4.375rem;
+}
+@media (max-width: 375px) {
+  .content__container {
+    max-width: 20.4375rem;
+    margin-top: 2.5rem;
+  }
 }
 
 .header {
@@ -151,6 +182,11 @@ button {
   width: 100%;
   align-items: center;
   margin-bottom: 2.5rem;
+}
+@media (max-width: 375px) {
+  .header {
+    margin-bottom: 1.25rem;
+  }
 }
 .header input {
   width: 1.5625rem;
@@ -163,6 +199,11 @@ button {
   display: flex;
   padding: 0.9375rem;
   align-items: center;
+}
+@media (max-width: 375px) {
+  .toDo__input__container {
+    padding: 0.4375rem 0.875rem;
+  }
 }
 
 .checkbox__container {
@@ -211,10 +252,11 @@ button {
   border-radius: 50%;
   border-radius: 15px;
 }
-
-/* On mouse-over, add a grey background color */
-.container_label:hover input ~ .checkmark {
-  /* background-color: #ccc; */
+@media (max-width: 375px) {
+  .checkmark {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -239,6 +281,12 @@ button {
   content: url(/images/icon-check.svg);
   left: 0.4375rem;
 }
+@media (max-width: 375px) {
+  .container_label .checkmark:after {
+    left: 0.25rem;
+    bottom: -0.125rem;
+  }
+}
 
 .toDolist__container {
   margin-top: 1.5rem;
@@ -258,6 +306,11 @@ button {
   border-bottom: 1px solid var(--toDolist-border);
   /* border: 1px solid black; */
 }
+@media (max-width: 375px) {
+  .toDolist__content {
+    padding: 0.8125rem 0.9375rem;
+  }
+}
 .toDolist__content li {
   list-style: none;
   flex-grow: 1;
@@ -266,6 +319,12 @@ button {
   margin-left: 1.5rem;
   letter-spacing: -0.25px;
   cursor: pointer;
+}
+@media (max-width: 375px) {
+  .toDolist__content li {
+    font-size: 0.75rem;
+    margin-left: 0.875rem;
+  }
 }
 .toDolist__content .del__line {
   text-decoration: line-through;
@@ -279,6 +338,11 @@ button {
 .delete__cross {
   display: none;
 }
+@media (max-width: 375px) {
+  .delete__cross {
+    display: block;
+  }
+}
 
 .toDolist__footer {
   display: flex;
@@ -287,9 +351,19 @@ button {
   padding: 1.25rem;
   letter-spacing: -0.19px;
 }
+@media (max-width: 375px) {
+  .toDolist__footer {
+    padding: 0.875rem;
+  }
+}
 .toDolist__footer span {
   font-size: 0.875rem;
   color: var(--dark-grayish-blue);
+}
+@media (max-width: 375px) {
+  .toDolist__footer span {
+    font-size: 0.75rem;
+  }
 }
 .toDolist__footer button {
   background-color: transparent;
@@ -304,6 +378,11 @@ button {
   margin-right: 0.875rem;
   font-weight: bold;
 }
+@media (max-width: 375px) {
+  .filter_btn {
+    font-size: 0.875rem;
+  }
+}
 .filter_btn:hover {
   color: var(--hover);
 }
@@ -314,6 +393,34 @@ button {
 .delete__btn button {
   font-weight: 400;
 }
+@media (max-width: 375px) {
+  .delete__btn button {
+    font-size: 0.75rem;
+  }
+}
 .delete__btn button:hover {
   color: var(--hover);
+}
+
+.hide {
+  display: flex;
+}
+@media (max-width: 375px) {
+  .hide {
+    display: none;
+  }
+}
+
+.footer--mobile {
+  display: none;
+  background-color: var(--bg-toDolist);
+  margin-top: 1rem;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.3125rem;
+}
+@media (max-width: 375px) {
+  .footer--mobile {
+    display: flex;
+  }
 }

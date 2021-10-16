@@ -8,6 +8,12 @@
     display: flex;
     justify-content: center;
     height: 100vh;
+
+    @include xs {
+
+        max-width: rem(375);
+        
+    }
 }
 
 .content__container{
@@ -16,6 +22,12 @@
     width: 100%;
     /* border: 2px solid black; */
     margin-top: rem(70);
+
+    @include xs {
+        
+        max-width: rem(327);
+        margin-top: rem(40);
+    }
 }
 
 .header {
@@ -26,6 +38,10 @@
     width: 100%;
     align-items: center;
     margin-bottom: rem(40);
+
+    @include xs {
+        margin-bottom: rem(20);
+    }
     
     input {
 
@@ -44,6 +60,12 @@
     display: flex;
     padding: rem(15);
     align-items: center;
+
+
+    @include xs {
+
+        padding: rem(7) rem(14);
+    }
     
    
    
