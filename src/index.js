@@ -1,3 +1,15 @@
-import hallo from "./hallo";
+import { switchTheme } from "./theme-toggle";
 
-console.log(hallo());
+
+const btn = document.getElementById('toggle');
+
+btn.addEventListener('click', switchTheme);
+
+
+
+
+
+
+
+
+
