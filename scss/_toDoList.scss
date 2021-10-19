@@ -45,13 +45,15 @@
         }
     }
 
-    .del__line {
-
-        text-decoration: line-through;
-        opacity: 0.3;
-    }
+    
 
    
+}
+
+.del__line {
+
+    text-decoration: line-through;
+    opacity: 0.3;
 }
 
 .toDolist__content:hover .delete__cross {

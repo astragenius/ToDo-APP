@@ -288,6 +288,14 @@ button {
   }
 }
 
+.del {
+  text-decoration: none;
+}
+
+input:checked, li.del {
+  text-decoration: line-through;
+}
+
 .toDolist__container {
   margin-top: 1.5rem;
   background-color: var(--bg-toDolist);
@@ -326,7 +334,8 @@ button {
     margin-left: 0.875rem;
   }
 }
-.toDolist__content .del__line {
+
+.del__line {
   text-decoration: line-through;
   opacity: 0.3;
 }
