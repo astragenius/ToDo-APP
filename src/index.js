@@ -16,7 +16,6 @@ import {toDoList} from "./add-ToDo";
 
 
 
-const listItems = document.querySelectorAll('.container_label > input');
 const content = document.querySelectorAll('.toDolist__content > li');
 const checkbox = document.querySelectorAll('.checkbox');
 const del_btn = document.getElementById('delete__btn');
@@ -38,21 +37,9 @@ ul.addEventListener('click', function(e) {
 })
 
 
-
 del_btn.addEventListener('click', function() {
 
-    listItems.forEach(el => {
-
-        if(el.disabled === false && el.checked === true) {
-
-          
-            el.parentElement.parentElement.parentElement.remove()
-            
-        }else {
-            return
-        }
-
-    })
+    todo.delComplete();
 })
 
 

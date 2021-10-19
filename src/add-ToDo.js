@@ -30,9 +30,21 @@ const toDoList = () => {
         }
     }
 
+    const delComplete = () => {
+
+        const listItems = document.querySelectorAll('.container_label > input');
+        listItems.forEach(el => {
+            if(el.checked === true) {
+
+                el.parentElement.parentElement.parentElement.remove();
+            }
+        })
+       
+    }
 
 
-    return {addToDo, removeTodo}
+
+    return {addToDo, removeTodo, delComplete}
 };
 
 /* const to = toDoList(); */
