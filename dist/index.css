@@ -367,6 +367,7 @@ input:checked, li.del {
 }
 .toDolist__footer span {
   font-size: 0.875rem;
+  margin-left: 0.3125rem;
   color: var(--dark-grayish-blue);
 }
 @media (max-width: 375px) {

@@ -1,10 +1,14 @@
 
 
 const toDoList = () => {
+    
+    const toDoContent = document.querySelectorAll('.toDolist__content');
+
+
 
     const addToDo = () => {
 
-        const input = document.getElementById('toDoInput').value;
+        let input = document.getElementById('toDoInput');
         const contentTodo = document.querySelector('.toDolist');
         const content = `<div class="toDolist__content" draggable="true">
 
@@ -14,13 +18,14 @@ const toDoList = () => {
                                 <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <li>${input}</li>
+                            <li>${input.value}</li>
                             <input class="delete__cross" type="image" src="/images/icon-cross.svg">
 
                         </div>`;
         
 
         contentTodo.insertAdjacentHTML('afterbegin', content);
+        input.value = '';
 
     }
 
@@ -42,9 +47,57 @@ const toDoList = () => {
        
     }
 
+    const checkItems = () => {
+
+        const num = document.querySelector('.item_num');
+        const list = document.querySelector('.toDolist');
+
+        num.textContent = list.children.length;
+
+    }
+
+    const completeToDo = () => {
+        const input = document.querySelectorAll('.checkbox');
+        
+        for(let i = 0; i < input.length; i++){
+
+            if(input[i].checked === true) {
+                toDoContent[i].style.display = "flex";
+
+            }else {
+                toDoContent[i].style.display = "none";
+            }
+        }
+        
+    }
+
+    const activeToDo = () => {
+        const input = document.querySelectorAll('.checkbox');
+        console.log('Hallo ich bin active')
+        for(let i = 0; i < input.length; i++) {
+            if(input[i].checked === false) {
+                toDoContent[i].style.display = "flex";
+
+            } else {
+                toDoContent[i].style.display = "none";
+            }
+        }
+    }
+
+    const showAll = () => {
+       
+
+        for(let i = 0; i < toDoContent.length; i++) {
+
+            if(toDoContent[i].style.display = "none") {
+                toDoContent[i].style.display ="flex";
+            }
+        }
+    }
 
 
-    return {addToDo, removeTodo, delComplete}
+
+    return {addToDo, removeTodo, delComplete, checkItems, completeToDo, activeToDo, showAll}
 };
 
 /* const to = toDoList(); */
