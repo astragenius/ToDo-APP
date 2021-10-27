@@ -12,7 +12,9 @@ const todo = toDoList();
 const all_btn = document.getElementById('all');
 const active_btn = document.getElementById('active');
 const complete_btn = document.getElementById('complete');
-const input = document.querySelectorAll('.checkbox');
+const input = [... document.querySelectorAll('.checkbox')];
+const list = document.querySelector('.toDolist');
+
 
 
 
@@ -20,42 +22,32 @@ const input = document.querySelectorAll('.checkbox');
 
 
 (function() {
-
     const btn = document.getElementById('toggle');
     btn.addEventListener('click', switchTheme);
-    dragDrop;
-    todo.checkItems();
-    todo.showAll();
-
-
-
+    todo.checkItems('all');
 })();
 
-
-
-console.log(active_btn);
-
-
+dragDrop;
 
 
 complete_btn.addEventListener('click', function() {
 
     todo.completeToDo();
-    todo.checkItems();
+    todo.checkItems('done');
     
 })
 
 
 active_btn.addEventListener('click', function() {
     todo.activeToDo();
-    todo.checkItems();
+    todo.checkItems('open');
 })
 
 
 all_btn.addEventListener('click', function() {
 
     todo.showAll();
-    todo.checkItems();
+    todo.checkItems('all');
     
 })
 
@@ -69,9 +61,7 @@ toDoInput.addEventListener('change', function() {
 });
 
 ul.addEventListener('click', function(e) {
-
     todo.removeTodo(e);
-    todo.checkItems();
 
 })
 
@@ -87,20 +77,5 @@ del_btn.addEventListener('click', function() {
 
 
 
-
-
-/* checkbox.forEach(box => {
-
-    box.addEventListener('change', function() {
-
-        if(this.checked === true) {
-
-            console.log('ich bin gechecked')
-        } else {
-
-            console.log('ich bin nich gechecked')
-        }
-    })
-}) */
 
 

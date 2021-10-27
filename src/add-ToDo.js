@@ -1,16 +1,14 @@
-
+import {dragDrop} from "./drag-and-drop";
 
 const toDoList = () => {
     
-    const toDoContent = document.querySelectorAll('.toDolist__content');
-
-
+    
 
     const addToDo = () => {
-
+       
         let input = document.getElementById('toDoInput');
         const contentTodo = document.querySelector('.toDolist');
-        const content = `<div class="toDolist__content" draggable="true">
+        const content = `<div class="toDolist__content add-item" draggable="true">
 
                             <div class="checkbox__container">
                                 <label class="container_label">
@@ -26,12 +24,29 @@ const toDoList = () => {
 
         contentTodo.insertAdjacentHTML('afterbegin', content);
         input.value = '';
+        
 
+       
+        
+ 
+        
     }
 
     const removeTodo = (e) => {
         if(e.target.className === "delete__cross"){
-            e.target.parentElement.remove();
+           
+            if(e.target.parentElement.classList.contains('add-item')) {
+               
+                e.target.parentElement.classList.remove("add-item");
+                e.target.parentElement.classList.add("removed-item");
+                setTimeout(function() {
+                    e.target.parentElement.remove();
+                    checkItems();
+
+            }, 600);
+            };
+            
+           
         }
     }
 
@@ -47,17 +62,46 @@ const toDoList = () => {
        
     }
 
-    const checkItems = () => {
+    const checkItems = (val) => {
 
         const num = document.querySelector('.item_num');
         const list = document.querySelector('.toDolist');
+        const input = [... document.querySelectorAll('.checkbox')];
+        
 
+        let count = 0;
+        let count1 = 0; 
         num.textContent = list.children.length;
+        if(val == 'all') {
+            num.textContent = list.children.length;
+        }
+        if(val == 'done') {
+            for(let i = 0; i < input.length; i++) {
+
+                if(input[i].checked == true) {
+            
+                    count++
+                    console.log(count)
+                }   
+            }
+            console.log('hallo');
+            num.textContent = count;
+        }
+        if(val == 'open'){
+
+            for(let i = 0; i < input.length; i++) {
+                if(input[i].checked == false) {
+                    count1++
+                }
+            }
+            num.textContent = count1;
+        }   
 
     }
 
     const completeToDo = () => {
         const input = document.querySelectorAll('.checkbox');
+        const toDoContent = document.querySelectorAll('.toDolist__content');
         
         for(let i = 0; i < input.length; i++){
 
@@ -73,7 +117,9 @@ const toDoList = () => {
 
     const activeToDo = () => {
         const input = document.querySelectorAll('.checkbox');
-        console.log('Hallo ich bin active')
+        const toDoContent = document.querySelectorAll('.toDolist__content');
+
+        
         for(let i = 0; i < input.length; i++) {
             if(input[i].checked === false) {
                 toDoContent[i].style.display = "flex";
@@ -86,6 +132,7 @@ const toDoList = () => {
 
     const showAll = () => {
        
+        const toDoContent = document.querySelectorAll('.toDolist__content');
 
         for(let i = 0; i < toDoContent.length; i++) {
 

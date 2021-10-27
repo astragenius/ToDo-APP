@@ -434,3 +434,31 @@ input:checked, li.del {
     display: flex;
   }
 }
+
+.removed-item {
+  animation: removed-item-animation 0.3s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+}
+
+.add-item {
+  animation: add-item-animation 0.3s 0.3s cubic-bezier(0, 0.8, 0.32, 1.07) forwards;
+}
+
+@keyframes add-item-animation {
+  from {
+    tranform: scale(0);
+  }
+  to {
+    opacity: 1;
+    tranform: scale(1);
+  }
+}
+@keyframes removed-item-animation {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

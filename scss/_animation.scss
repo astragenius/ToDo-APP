@@ -1,0 +1,43 @@
+.removed-item {
+
+    animation: removed-item-animation .3s cubic-bezier(.55, -0.04, .91, .94) forwards;
+}
+
+.add-item {
+   animation: add-item-animation .3s .3s cubic-bezier(0, .8, .32, 1.07) forwards;
+}
+
+
+
+  
+
+
+
+
+@keyframes add-item-animation {
+
+    from {
+       
+        tranform: scale(0);
+
+    }
+    to {
+        opacity: 1;
+        tranform: scale(1);
+    }
+}
+
+@keyframes removed-item-animation {
+
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
