@@ -1,5 +1,4 @@
 import { switchTheme } from "./theme-toggle";
-import {dragDrop} from "./drag-and-drop";
 import {toDoList} from "./add-ToDo";
 
 
@@ -28,7 +27,7 @@ const input = [... document.querySelectorAll('.checkbox')];
     
 })();
 
-dragDrop;
+
 
 
 complete_btn.addEventListener('click', function() {
@@ -77,5 +76,5 @@ del_btn.addEventListener('click', function() {
 
 
 
-    
+
 

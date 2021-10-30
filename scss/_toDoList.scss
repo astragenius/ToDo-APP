@@ -19,10 +19,9 @@
 
     display: flex;
     align-items: center;
-   
     padding: rem(20) rem(16);
     border-bottom: 1px solid var(--toDolist-border);
-    /* border: 1px solid black; */
+    
 
     @include xs {
 
@@ -50,11 +49,7 @@
    
 }
 
-.del__line {
 
-    text-decoration: line-through;
-    opacity: 0.3;
-}
 
 .toDolist__content:hover .delete__cross {
 
@@ -176,6 +171,3 @@
     }
 
 }
-
-
-

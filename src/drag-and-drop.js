@@ -1,76 +1,76 @@
 
 
 
-const list = document.querySelectorAll('.toDolist__content');
 
 
 
-const dragDrop = (() => {
+
+const dragDrop = (content) => {
 
 
-        let dragSrcEl = null;
-
+    
+    
 
          function handleDragStart (e) {
 
-            dragSrcEl = this;
-            e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/html', this.innerHTML);
+            
+            e.target.classList.add('dragging');
         };
     
         function handleDragEnd (e) {
+            e.target.classList.remove('dragging');
     
-            list.forEach(function(el) {
-                el.classList.remove('hover');
-            });        
+           
         };
     
         function handleDragOver (e) {
-            if(e.preventDefault) {
-                e.preventDefault();
-    
-            }
-    
-            return false;
-        }
-    
-        function handleDragEnter (e) {
-            this.classList.add('hover');
-        }
-    
-        function handleDragLeave (e) {
-            this.classList.remove('hover');
-    
-        }
-    
-        function handleDrop (e) {
-            if(e.stopPropagation) {
-                e.stopPropagation();
-            }
-                if(dragSrcEl !== this) {
-                    dragSrcEl.innerHTML = this.innerHTML;
-                    this.innerHTML = e.dataTransfer.getData('text/html');
-                }
-            return false;
-        }
+            const contentTodo = document.querySelector('.toDolist');
 
+            e.preventDefault();
+            const draggable = document.querySelector('.dragging');
+            const afterElement = getDragAfterElement(contentTodo, e.clientY)
+            if(afterElement == null) {
+                contentTodo.appendChild(draggable);
 
+            }else {
+                contentTodo.insertBefore(draggable, afterElement);
+            }
+        }
+    
+        
+    
+
+        function getDragAfterElement(container, y) {
+            
+           const draggableElements = [... container.querySelectorAll('.toDolist__content:not(.dragging)')];
+            return draggableElements.reduce((closest, child) => {
+
+                    const box = child.getBoundingClientRect()
+                    const offset = y - box.top - box.height / 2
+                    
+                    if(offset < 0 && offset > closest.offset) {
+                        return {offset: offset, element: child}
+                        
+                    }else {
+                        return closest
+                    }
+            }, {offset: Number.NEGATIVE_INFINITY}).element
+        }
         
             
 
-            for(let i = 0; i < list.length; i++) {
+           
 
-                list[i].addEventListener('dragstart', handleDragStart);
-                list[i].addEventListener('dragover', handleDragOver);
-                list[i].addEventListener('dragenter', handleDragEnter);
-                list[i].addEventListener('dragleave', handleDragLeave);
-                list[i].addEventListener('dragend', handleDragEnd);
-                list[i].addEventListener('drop', handleDrop);
+        content.addEventListener('dragstart', handleDragStart);
+        content.addEventListener('dragover', handleDragOver);
+        content.addEventListener('dragend', handleDragEnd);
+        
                 
 
-            }
+    return content             
 
-})();
+    
+};
 
 
 

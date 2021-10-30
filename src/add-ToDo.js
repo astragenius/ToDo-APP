@@ -14,6 +14,7 @@ const toDoList = () => {
 
 
         todoContent.setAttribute('class', 'toDolist__content add-item');
+        todoContent.setAttribute('draggable', 'true');
         checkBoxContainer.setAttribute('class', 'checkbox__container');
 
         containerLabel.setAttribute('class', 'container_label');
@@ -35,19 +36,21 @@ const toDoList = () => {
         todoContent.appendChild(checkBoxContainer);
         todoContent.appendChild(list);
         todoContent.appendChild(delBtn);
+        dragDrop(todoContent);
 
         return todoContent;
     }
+
+  
     
 
     const addToDo = () => {
        
         let input = document.getElementById('toDoInput');
         const contentTodo = document.querySelector('.toDolist');
-        console.log(input.value);
-        const content = createHtml(input.value);
-        console.log(content);
-        contentTodo.insertAdjacentElement('afterbegin', content);
+        
+        
+        contentTodo.insertAdjacentElement('afterbegin', createHtml(input.value));
         input.value = '';
           
     }
@@ -101,10 +104,10 @@ const toDoList = () => {
                 if(input[i].checked == true) {
             
                     count++
-                    console.log(count)
+                  
                 }   
             }
-            console.log('hallo');
+            
             num.textContent = count;
         }
         if(val == 'open'){
@@ -165,8 +168,7 @@ const toDoList = () => {
     const checkedTodo = (e) => {    
                 
 
-                console.log('Hallo');
-                console.log(e.target);
+               
     
                 if(e.target.checked == true) {
                     
@@ -181,10 +183,10 @@ const toDoList = () => {
 
 
 
-    return {addToDo, removeTodo, delComplete, checkItems, completeToDo, activeToDo, showAll, checkedTodo}
+    return {addToDo, removeTodo, delComplete, checkItems, completeToDo, activeToDo, showAll}
 };
 
-/* const to = toDoList(); */
+
 
 
 

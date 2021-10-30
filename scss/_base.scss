@@ -122,3 +122,9 @@ button {
     
 }
 
+.dragging {
+
+    opacity: 0.5;
+    box-shadow: var(--dragBox) 0px 30px 60px -12px inset, var(--dragBox) 0px 18px 36px -18px inset;
+}
+

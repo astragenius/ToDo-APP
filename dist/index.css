@@ -17,6 +17,7 @@
   --input-text: #c8cbe8;
   --toDolist-text: #c8cbe8;
   --hover: #e4e5f1;
+  --dragBox: #e4e5f1;
 }
 
 :root,
@@ -33,6 +34,7 @@
   --input-text: #393A4B;
   --toDolist-text: #494C6B;
   --hover: #494c6b;
+  --dragBox: #b8b9c5;
 }
 
 *,
@@ -147,6 +149,11 @@ button {
   text-align: center;
   margin-top: 3.0625rem;
   font-size: 0.875rem;
+}
+
+.dragging {
+  opacity: 0.5;
+  box-shadow: var(--dragBox) 0px 30px 60px -12px inset, var(--dragBox) 0px 18px 36px -18px inset;
 }
 
 .container {
@@ -290,7 +297,7 @@ button {
 
 .del {
   text-decoration: line-through;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 .toDolist__container {
@@ -309,7 +316,6 @@ button {
   align-items: center;
   padding: 1.25rem 1rem;
   border-bottom: 1px solid var(--toDolist-border);
-  /* border: 1px solid black; */
 }
 @media (max-width: 375px) {
   .toDolist__content {
@@ -330,11 +336,6 @@ button {
     font-size: 0.75rem;
     margin-left: 0.875rem;
   }
-}
-
-.del__line {
-  text-decoration: line-through;
-  opacity: 0.3;
 }
 
 .toDolist__content:hover .delete__cross {
