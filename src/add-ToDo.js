@@ -2,34 +2,54 @@ import {dragDrop} from "./drag-and-drop";
 
 const toDoList = () => {
     
+    const createHtml = (val) => {
+
+        const todoContent = document.createElement('div');
+        const checkBoxContainer = document.createElement('div');
+        const containerLabel = document.createElement('label');
+        const checkbox = document.createElement('input');
+        const checkmark = document.createElement('span');
+        const list = document.createElement('li');
+        const delBtn = document.createElement('input');
+
+
+        todoContent.setAttribute('class', 'toDolist__content add-item');
+        checkBoxContainer.setAttribute('class', 'checkbox__container');
+
+        containerLabel.setAttribute('class', 'container_label');
+        checkbox.setAttribute('type', 'checkbox');
+        checkbox.setAttribute('class', 'checkbox')
+        checkbox.addEventListener('click', checkedTodo)
+        checkmark.setAttribute('class', 'checkmark');
+
+        list.textContent = val;
+
+        delBtn.setAttribute('class', 'delete__cross');
+        delBtn.setAttribute('type', 'image');
+        delBtn.setAttribute('src', '/images/icon-cross.svg');
+        
+        containerLabel.appendChild(checkbox);
+        containerLabel.appendChild(checkmark);
+        checkBoxContainer.appendChild(containerLabel);
+
+        todoContent.appendChild(checkBoxContainer);
+        todoContent.appendChild(list);
+        todoContent.appendChild(delBtn);
+
+        return todoContent;
+    }
     
 
     const addToDo = () => {
        
         let input = document.getElementById('toDoInput');
         const contentTodo = document.querySelector('.toDolist');
-        const content = `<div class="toDolist__content add-item" draggable="true">
-
-                            <div class="checkbox__container">
-                                <label class="container_label">
-                                <input type="checkbox" class="checkbox">
-                                <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <li>${input.value}</li>
-                            <input class="delete__cross" type="image" src="/images/icon-cross.svg">
-
-                        </div>`;
-        
-
-        contentTodo.insertAdjacentHTML('afterbegin', content);
+        console.log(input.value);
+        const content = createHtml(input.value);
+        console.log(content);
+        contentTodo.insertAdjacentElement('afterbegin', content);
         input.value = '';
-        
-
-       
-        
- 
-        
+          
     }
 
     const removeTodo = (e) => {
@@ -142,9 +162,26 @@ const toDoList = () => {
         }
     }
 
+    const checkedTodo = (e) => {    
+                
+
+                console.log('Hallo');
+                console.log(e.target);
+    
+                if(e.target.checked == true) {
+                    
+                    e.target.parentElement.parentElement.nextElementSibling.classList.toggle('del')
+                }else {
+                    e.target.parentElement.parentElement.nextElementSibling.classList.toggle('del')
+                }
+            
+        
+
+    }
 
 
-    return {addToDo, removeTodo, delComplete, checkItems, completeToDo, activeToDo, showAll}
+
+    return {addToDo, removeTodo, delComplete, checkItems, completeToDo, activeToDo, showAll, checkedTodo}
 };
 
 /* const to = toDoList(); */

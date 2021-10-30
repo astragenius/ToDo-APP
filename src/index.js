@@ -4,7 +4,7 @@ import {toDoList} from "./add-ToDo";
 
 
 
-const checkbox = document.querySelectorAll('.checkbox');
+
 const del_btn = document.getElementById('delete__btn');
 const toDoInput = document.getElementById('toDoInput');
 const ul = document.getElementsByTagName('ul')[0];
@@ -13,7 +13,7 @@ const all_btn = document.getElementById('all');
 const active_btn = document.getElementById('active');
 const complete_btn = document.getElementById('complete');
 const input = [... document.querySelectorAll('.checkbox')];
-const list = document.querySelector('.toDolist');
+
 
 
 
@@ -25,6 +25,7 @@ const list = document.querySelector('.toDolist');
     const btn = document.getElementById('toggle');
     btn.addEventListener('click', switchTheme);
     todo.checkItems('all');
+    
 })();
 
 dragDrop;
@@ -62,6 +63,7 @@ toDoInput.addEventListener('change', function() {
 
 ul.addEventListener('click', function(e) {
     todo.removeTodo(e);
+   
 
 })
 
@@ -75,7 +77,5 @@ del_btn.addEventListener('click', function() {
 
 
 
-
-
-
+    
 

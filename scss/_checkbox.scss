@@ -77,10 +77,8 @@
 
 .del {
 
-  text-decoration: none;
-}
-
-input:checked, li.del {
-
   text-decoration: line-through;
+  opacity: 0.5;
 }
+
+
