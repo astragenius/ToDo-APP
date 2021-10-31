@@ -80,7 +80,7 @@ a {
 }
 
 .container--light {
-  background-image: url("../images/bg-desktop-light.jpg");
+  background-image: url("images/bg-desktop-light.jpg");
   background-repeat: no-repeat;
   background-size: contain;
 }
