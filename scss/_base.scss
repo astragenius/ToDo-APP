@@ -35,13 +35,13 @@ a {
 
 .container--light {
 
-    background-image: url(../images/bg-desktop-light.jpg);
+    background-image: url("../images/bg-desktop-light.jpg");
     background-repeat: no-repeat;
     background-size: contain;
 
     @include xs {
 
-        background-image: url(../images/bg-mobile-light.jpg);
+        background-image: url("../images/bg-mobile-light.jpg");
     }
     
 }
@@ -49,26 +49,26 @@ a {
 .container--dark {
 
     
-    background-image: url(../images/bg-desktop-dark.jpg);
+    background-image: url("../images/bg-desktop-dark.jpg");
     background-repeat: no-repeat;
     background-size: contain;
 
     @include xs {
 
-        background-image: url(../images/bg-mobile-dark.jpg);
+        background-image: url("../images/bg-mobile-dark.jpg");
     }
 }
 
 .btn--dark {
 
-    background-image: url(../images/icon-sun.svg);
+    background-image: url("../images/icon-sun.svg");
     background-size: contain;
     background-color: transparent;
 
 }
 .btn--light {
 
-    background-image: url(../images/icon-moon.svg);
+    background-image: url("../images/icon-moon.svg");
     background-size: contain;
     background-color: transparent;
 }
