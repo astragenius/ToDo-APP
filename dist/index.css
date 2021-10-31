@@ -18,6 +18,7 @@
   --toDolist-text: #c8cbe8;
   --hover: #e4e5f1;
   --dragBox: #e4e5f1;
+  --footer-text: #777a92;
 }
 
 :root,
@@ -35,6 +36,7 @@
   --toDolist-text: #494C6B;
   --hover: #494c6b;
   --dragBox: #b8b9c5;
+  --footer-text: #393A4B;
 }
 
 *,
@@ -52,15 +54,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: #3e52a3;
-}
-
 body {
   background-color: var(--bg);
 }
@@ -72,7 +65,7 @@ h1 {
   font-weight: 700;
   color: #fff;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   h1 {
     font-size: 1.5625rem;
   }
@@ -82,12 +75,16 @@ button {
   font-family: Josefin Sans, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container--light {
   background-image: url(/images/bg-desktop-light.jpg);
   background-repeat: no-repeat;
   background-size: contain;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .container--light {
     background-image: url(/images/bg-mobile-light.jpg);
   }
@@ -98,7 +95,7 @@ button {
   background-repeat: no-repeat;
   background-size: contain;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .container--dark {
     background-image: url(/images/bg-mobile-dark.jpg);
   }
@@ -133,7 +130,7 @@ button {
   color: var(--very-dark-grayish-blue);
   letter-spacing: -0.25px;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .input__text__container ::placeholder {
     font-size: 0.75rem;
   }
@@ -156,6 +153,16 @@ button {
   box-shadow: var(--dragBox) 0px 30px 60px -12px inset, var(--dragBox) 0px 18px 36px -18px inset;
 }
 
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--footer-text);
+}
+
+.attribution a {
+  color: var(--footer-text);
+}
+
 .container {
   max-width: 90rem;
   margin: 0 auto;
@@ -163,7 +170,7 @@ button {
   justify-content: center;
   height: 98vh;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .container {
     max-width: 23.4375rem;
   }
@@ -175,7 +182,7 @@ button {
   /* border: 2px solid black; */
   margin-top: 4.375rem;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .content__container {
     max-width: 20.4375rem;
     margin-top: 2.5rem;
@@ -190,7 +197,7 @@ button {
   align-items: center;
   margin-bottom: 2.5rem;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .header {
     margin-bottom: 1.25rem;
   }
@@ -207,7 +214,7 @@ button {
   padding: 0.9375rem;
   align-items: center;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .toDo__input__container {
     padding: 0.4375rem 0.875rem;
   }
@@ -259,7 +266,7 @@ button {
   border-radius: 50%;
   border-radius: 15px;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .checkmark {
     height: 1.25rem;
     width: 1.25rem;
@@ -288,7 +295,7 @@ button {
   content: url(/images/icon-check.svg);
   left: 0.4375rem;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .container_label .checkmark:after {
     left: 0.25rem;
     bottom: -0.125rem;
@@ -317,7 +324,7 @@ button {
   padding: 1.25rem 1rem;
   border-bottom: 1px solid var(--toDolist-border);
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .toDolist__content {
     padding: 0.8125rem 0.9375rem;
   }
@@ -331,7 +338,7 @@ button {
   letter-spacing: -0.25px;
   cursor: pointer;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .toDolist__content li {
     font-size: 0.75rem;
     margin-left: 0.875rem;
@@ -345,7 +352,7 @@ button {
 .delete__cross {
   display: none;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .delete__cross {
     display: block;
   }
@@ -358,7 +365,7 @@ button {
   padding: 1.25rem;
   letter-spacing: -0.19px;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .toDolist__footer {
     padding: 0.875rem;
   }
@@ -368,7 +375,7 @@ button {
   margin-left: 0.3125rem;
   color: var(--dark-grayish-blue);
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .toDolist__footer span {
     font-size: 0.75rem;
   }
@@ -386,7 +393,7 @@ button {
   margin-right: 0.875rem;
   font-weight: bold;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .filter_btn {
     font-size: 0.875rem;
   }
@@ -401,7 +408,7 @@ button {
 .delete__btn button {
   font-weight: 400;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .delete__btn button {
     font-size: 0.75rem;
   }
@@ -413,7 +420,7 @@ button {
 .hide {
   display: flex;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .hide {
     display: none;
   }
@@ -427,7 +434,7 @@ button {
   box-shadow: var(--box-shadow);
   border-radius: 0.3125rem;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .footer--mobile {
     display: flex;
   }

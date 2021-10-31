@@ -8,10 +8,11 @@ const del_btn = document.getElementById('delete__btn');
 const toDoInput = document.getElementById('toDoInput');
 const ul = document.getElementsByTagName('ul')[0];
 const todo = toDoList();
-const all_btn = document.getElementById('all');
-const active_btn = document.getElementById('active');
-const complete_btn = document.getElementById('complete');
-const input = [... document.querySelectorAll('.checkbox')];
+
+const all_btn = document.querySelectorAll('.filter_all');
+const active_btn = document.querySelectorAll('.filter_active');
+const complete_btn = document.querySelectorAll('.filter_complete');
+
 
 
 
@@ -29,27 +30,41 @@ const input = [... document.querySelectorAll('.checkbox')];
 
 
 
-
-complete_btn.addEventListener('click', function() {
-
-    todo.completeToDo();
-    todo.checkItems('done');
+complete_btn.forEach(el => {
     
+    el.addEventListener('click', function() {
+
+        todo.completeToDo();
+        todo.checkItems('done');
+        
+    })
 })
 
 
-active_btn.addEventListener('click', function() {
-    todo.activeToDo();
-    todo.checkItems('open');
+active_btn.forEach(el => {
+
+    el.addEventListener('click', function() {
+        todo.activeToDo();
+        todo.checkItems('open');
+    })
+
 })
 
 
-all_btn.addEventListener('click', function() {
 
-    todo.showAll();
-    todo.checkItems('all');
-    
+
+all_btn.forEach(el => {
+
+    el.addEventListener('click', function() {
+
+        todo.showAll();
+        todo.checkItems('all');
+        
+    })
 })
+
+
+
 
 
 

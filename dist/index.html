@@ -42,44 +42,9 @@
 
           <ul class="toDolist">
 
-              <div class="toDolist__content add-item" draggable="true">
+             
 
-                  <div class="checkbox__container">
-                      <label class="container_label">
-                      <input type="checkbox" class="checkbox">
-                      <span class="checkmark"></span>
-                      </label>
-                  </div>
-                  <li>Complete javascript course</li>
-                  <input class="delete__cross" type="image" src="/images/icon-cross.svg">
 
-              </div>
-
-              <div class="toDolist__content add-item" draggable="true">
-
-                <div class="checkbox__container">
-                    <label class="container_label">
-                    <input type="checkbox" checked="checked" class="checkbox">
-                    <span class="checkmark"></span>
-                    </label>
-                </div>
-                <li>10 min meditation</li>
-                <input class="delete__cross" type="image" src="/images/icon-cross.svg">
-
-            </div>
-
-            <div class="toDolist__content add-item" draggable="true">
-
-              <div class="checkbox__container">
-                  <label class="container_label">
-                  <input type="checkbox" class="checkbox">
-                  <span class="checkmark"></span>
-                  </label>
-              </div>
-              <li> Jogging around 10min </li>
-              <input class="delete__cross" type="image" src="/images/icon-cross.svg">
-
-          </div>
           </ul>
 
 
@@ -90,7 +55,7 @@
               <span class="item_num">0 </span><span>Items left</span>
             </div>
             <div class="filter__btns hide">
-              <button id="all" class="filter_btn">All</button>
+              <button id="all" class="filter_btn filter_all">All</button>
               <button id="active" class="filter_btn">Active</button>
               <button id="complete" class="filter_btn">Completed</button>
             </div>
@@ -106,9 +71,9 @@
 
         <div class="toDolist__footer footer--mobile">
           <div class="filter__btns">
-            <button id="all" class="filter_btn">All</button>
-            <button id="active" class="filter_btn">Active</button>
-            <button id="complete" class="filter_btn">Completed</button>
+            <button id="all" class="filter_btn filter_all">All</button>
+            <button id="active" class="filter_btn filter_active">Active</button>
+            <button id="complete" class="filter_btn filter_complete">Completed</button>
           </div>
         </div>
         
@@ -124,9 +89,13 @@
 
   </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/astragenius/ToDo-APP.git">Astragenius</a>.
+    </div>
+  </footer>
+
+  
 </body>
 </html>

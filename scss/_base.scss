@@ -25,6 +25,11 @@ button {
 
 }
 
+a {
+
+    text-decoration: none;
+}
+
 
 
 
@@ -128,3 +133,11 @@ button {
     box-shadow: var(--dragBox) 0px 30px 60px -12px inset, var(--dragBox) 0px 18px 36px -18px inset;
 }
 
+.attribution { 
+     font-size: rem(12);
+     text-align: center; 
+     color: var(--footer-text);
+    }
+.attribution a {
+     color: var(--footer-text); 
+    }
