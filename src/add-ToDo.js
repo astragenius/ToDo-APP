@@ -27,7 +27,7 @@ const toDoList = () => {
 
         delBtn.setAttribute('class', 'delete__cross');
         delBtn.setAttribute('type', 'image');
-        delBtn.setAttribute('src', '/images/icon-cross.svg');
+        delBtn.setAttribute('src', 'images/icon-cross.svg');
         
         containerLabel.appendChild(checkbox);
         containerLabel.appendChild(checkmark);

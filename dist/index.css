@@ -292,7 +292,7 @@ a {
 
 /* Style the checkmark/indicator */
 .container_label .checkmark:after {
-  content: url(/images/icon-check.svg);
+  content: url("images/icon-check.svg");
   left: 0.4375rem;
 }
 @media (max-width: 414px) {
